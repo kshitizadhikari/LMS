@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "R9CmEQHCrQQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Application\\LMS.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\azrachit\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
