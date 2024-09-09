@@ -28,10 +28,7 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.1"
         },
         "runtime": {
-          "LMS.Core.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "LMS.Core.dll": {}
         }
       }
     }

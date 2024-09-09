@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS\\LMS.Api.csproj": {}
+    "D:\\DotNet\\LMS\\LMS\\LMS.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Application\\LMS.Application.csproj": {
+    "D:\\DotNet\\LMS\\LMS.Application\\LMS.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Application\\LMS.Application.csproj",
+        "projectUniqueName": "D:\\DotNet\\LMS\\LMS.Application\\LMS.Application.csproj",
         "projectName": "LMS.Application",
-        "projectPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Application\\LMS.Application.csproj",
-        "packagesPath": "C:\\Users\\azrachit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Application\\obj\\",
+        "projectPath": "D:\\DotNet\\LMS\\LMS.Application\\LMS.Application.csproj",
+        "packagesPath": "C:\\Users\\adhik\\.nuget\\packages\\",
+        "outputPath": "D:\\DotNet\\LMS\\LMS.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\azrachit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adhik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Core\\LMS.Core.csproj": {
-                "projectPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Core\\LMS.Core.csproj"
+              "D:\\DotNet\\LMS\\LMS.Core\\LMS.Core.csproj": {
+                "projectPath": "D:\\DotNet\\LMS\\LMS.Core\\LMS.Core.csproj"
               }
             }
           }
@@ -71,21 +75,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Core\\LMS.Core.csproj": {
+    "D:\\DotNet\\LMS\\LMS.Core\\LMS.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Core\\LMS.Core.csproj",
+        "projectUniqueName": "D:\\DotNet\\LMS\\LMS.Core\\LMS.Core.csproj",
         "projectName": "LMS.Core",
-        "projectPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Core\\LMS.Core.csproj",
-        "packagesPath": "C:\\Users\\azrachit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Core\\obj\\",
+        "projectPath": "D:\\DotNet\\LMS\\LMS.Core\\LMS.Core.csproj",
+        "packagesPath": "C:\\Users\\adhik\\.nuget\\packages\\",
+        "outputPath": "D:\\DotNet\\LMS\\LMS.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\azrachit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adhik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -138,21 +146,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Infrastructure\\LMS.Infrastructure.csproj": {
+    "D:\\DotNet\\LMS\\LMS.Infrastructure\\LMS.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Infrastructure\\LMS.Infrastructure.csproj",
+        "projectUniqueName": "D:\\DotNet\\LMS\\LMS.Infrastructure\\LMS.Infrastructure.csproj",
         "projectName": "LMS.Infrastructure",
-        "projectPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Infrastructure\\LMS.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\azrachit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Infrastructure\\obj\\",
+        "projectPath": "D:\\DotNet\\LMS\\LMS.Infrastructure\\LMS.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\adhik\\.nuget\\packages\\",
+        "outputPath": "D:\\DotNet\\LMS\\LMS.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\azrachit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adhik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -167,8 +179,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Application\\LMS.Application.csproj": {
-                "projectPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Application\\LMS.Application.csproj"
+              "D:\\DotNet\\LMS\\LMS.Application\\LMS.Application.csproj": {
+                "projectPath": "D:\\DotNet\\LMS\\LMS.Application\\LMS.Application.csproj"
               }
             }
           }
@@ -188,6 +200,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -219,21 +235,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS\\LMS.Api.csproj": {
+    "D:\\DotNet\\LMS\\LMS\\LMS.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS\\LMS.Api.csproj",
+        "projectUniqueName": "D:\\DotNet\\LMS\\LMS\\LMS.Api.csproj",
         "projectName": "LMS.Api",
-        "projectPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS\\LMS.Api.csproj",
-        "packagesPath": "C:\\Users\\azrachit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS\\obj\\",
+        "projectPath": "D:\\DotNet\\LMS\\LMS\\LMS.Api.csproj",
+        "packagesPath": "C:\\Users\\adhik\\.nuget\\packages\\",
+        "outputPath": "D:\\DotNet\\LMS\\LMS\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\azrachit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adhik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -248,11 +268,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Application\\LMS.Application.csproj": {
-                "projectPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Application\\LMS.Application.csproj"
+              "D:\\DotNet\\LMS\\LMS.Application\\LMS.Application.csproj": {
+                "projectPath": "D:\\DotNet\\LMS\\LMS.Application\\LMS.Application.csproj"
               },
-              "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Infrastructure\\LMS.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Infrastructure\\LMS.Infrastructure.csproj"
+              "D:\\DotNet\\LMS\\LMS.Infrastructure\\LMS.Infrastructure.csproj": {
+                "projectPath": "D:\\DotNet\\LMS\\LMS.Infrastructure\\LMS.Infrastructure.csproj"
               }
             }
           }
@@ -302,7 +322,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

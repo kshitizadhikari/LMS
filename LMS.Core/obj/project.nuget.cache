@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1m0jMTUIbI8=",
+  "dgSpecHash": "REL0KnU/umI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\azrachit\\source\\repos\\LMS\\LMS.Core\\LMS.Core.csproj",
+  "projectFilePath": "D:\\DotNet\\LMS\\LMS.Core\\LMS.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\azrachit\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512"
+    "C:\\Users\\adhik\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512"
   ],
   "logs": []
 }

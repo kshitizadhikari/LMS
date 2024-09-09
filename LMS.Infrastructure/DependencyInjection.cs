@@ -11,8 +11,10 @@ namespace LMS.Infrastructure
     {
         public static IServiceCollection AddInfrastructureDI(this IServiceCollection services, IConfiguration configuration )
         {
+            //services.AddDbContext<AppDbContext>(options =>
+            //options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<AppDbContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
