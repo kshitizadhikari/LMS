@@ -1,6 +1,5 @@
 using LMS.Api;
-using LMS.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
+using LMS.Application.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +19,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod()
+    .WithOrigins("http://localhost:4200", "https://localhost:4200"));
 
 app.UseHttpsRedirection();
 

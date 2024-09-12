@@ -86,7 +86,7 @@ namespace LMS.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("LunchDetailId")
+                    b.Property<Guid?>("LunchDetailId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Phone")
@@ -107,9 +107,7 @@ namespace LMS.Infrastructure.Migrations
                 {
                     b.HasOne("LMS.Core.Entities.LunchDetail", "LunchDetail")
                         .WithMany("Persons")
-                        .HasForeignKey("LunchDetailId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LunchDetailId");
 
                     b.Navigation("LunchDetail");
                 });

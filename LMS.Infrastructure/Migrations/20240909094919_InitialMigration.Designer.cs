@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LMS.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240909092154_initial migration")]
-    partial class initialmigration
+    [Migration("20240909094919_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,7 +89,7 @@ namespace LMS.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("LunchDetailId")
+                    b.Property<Guid?>("LunchDetailId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Phone")
@@ -110,9 +110,7 @@ namespace LMS.Infrastructure.Migrations
                 {
                     b.HasOne("LMS.Core.Entities.LunchDetail", "LunchDetail")
                         .WithMany("Persons")
-                        .HasForeignKey("LunchDetailId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LunchDetailId");
 
                     b.Navigation("LunchDetail");
                 });

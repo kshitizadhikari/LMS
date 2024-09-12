@@ -8,6 +8,6 @@
         public float Extra { get; set; }
         public float Due { get; set; }
         public float Balance { get; set; }
-        public virtual ICollection<Person> Persons { get; set; } = new List<Person>();
+        public virtual ICollection<Person>? Persons { get; set; }
     }
 }
