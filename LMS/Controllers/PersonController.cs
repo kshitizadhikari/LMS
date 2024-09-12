@@ -1,13 +1,11 @@
-﻿using LMS.Core.Entities;
+﻿using LMS.Core.DTOs.PersonDTOs;
 using LMS.Core.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LMS.Api.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
-    public class PersonController : ControllerBase
+    public class PersonController : BaseApiController
     {
         private readonly IServiceWrapper _services;
 
@@ -17,29 +15,29 @@ namespace LMS.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Person>> GetPersonById(string id)
+        public async Task<ActionResult<PersonDTO>> GetPersonById(string id)
         {
-            Person person = await _services.PersonService.GetById(id);
-            return person;
+            PersonDTO personDto = await _services.PersonService.GetByIdAsync(id);
+            return personDto;
         }
 
         [HttpGet("get-all")]
-        public async Task<ActionResult<List<Person>>> GetAll()
+        public async Task<ActionResult<List<PersonDTO>>> GetAllAsync()
         {
-            return await _services.PersonService.GetAll();
+            return await _services.PersonService.GetAllAsync();
         }
 
         [HttpPost]
-        public async Task<Person> CreatePerson([FromBody] Person entity)
+        public async Task<PersonDTO> CreatePerson([FromBody] CreatePersonDTO personDto)
         {
-            Person person = await _services.PersonService.CreateAsync(entity);
-            return person;
+            PersonDTO result = await _services.PersonService.CreateAsync(personDto);
+            return result;
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> UpdatePersonById(Person person)
+        public async Task<IActionResult> UpdatePerson(string id, PersonDTO personDto)
         {
-            await _services.PersonService.UpdateAsync(person);
+            await _services.PersonService.UpdateAsync(id, personDto);
             return Ok();
         }
     }

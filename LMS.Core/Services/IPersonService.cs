@@ -1,13 +1,13 @@
-﻿using LMS.Core.Entities;
+﻿using LMS.Core.DTOs.PersonDTOs;
 
 namespace LMS.Core.Services
 {
     public interface IPersonService
     {
-        Task<Person> GetById(string id);
-        Task<List<Person>> GetAll();
-        Task<Person> CreateAsync(Person person);
-        Task UpdateAsync(Person person);
+        Task<PersonDTO> GetByIdAsync(string id);
+        Task<List<PersonDTO>> GetAllAsync();
+        Task<PersonDTO> CreateAsync(CreatePersonDTO person);
+        Task UpdateAsync(string id, PersonDTO person);
         Task<bool> DeleteAsync(string id);
     }
 }
