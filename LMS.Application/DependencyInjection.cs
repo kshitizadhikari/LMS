@@ -8,7 +8,7 @@ namespace LMS.Application
     {
         public static IServiceCollection AddApplicationDI(this IServiceCollection services)
         {
-            services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IServiceWrapper, ServiceWrapper>();
             return services;
         }

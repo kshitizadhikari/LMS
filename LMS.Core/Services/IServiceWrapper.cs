@@ -2,6 +2,6 @@
 {
     public interface IServiceWrapper
     {
-        public IPersonService PersonService { get; }
+        public ICustomerService CustomerService { get; }
     }
 }

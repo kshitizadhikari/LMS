@@ -4,13 +4,13 @@ namespace LMS.Infrastructure.Repositories
 {
     public class RepositoryWrapper : IRepositoryWrapper
     {
-       private IPersonRepository _personRepository;
+       private ICustomerRepository _personRepository;
 
-        public RepositoryWrapper(IPersonRepository personRepository)
+        public RepositoryWrapper(ICustomerRepository personRepository)
         {
             _personRepository = personRepository;
         }
-        public IPersonRepository PersonRepository => _personRepository;
+        public ICustomerRepository CustomerRepository => _personRepository;
 
     }
 }

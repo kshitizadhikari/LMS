@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LMS.Core.DTOs.PersonDTOs
+namespace LMS.Core.DTOs.CustomerDTOs
 {
-    public class PersonDTO
+    public class CustomerDTO
     {
         public string Id { get; set; }
 
@@ -11,6 +11,9 @@ namespace LMS.Core.DTOs.PersonDTOs
 
         [Required(ErrorMessage = "Last Name is required")]
         public string LastName { get; set; }
+
+        [Required(ErrorMessage = "Email is required")]
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "Phone is required")]
         public string Phone { get; set; }

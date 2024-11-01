@@ -1,4 +1,4 @@
-﻿using LMS.Core.Entities;
+﻿using LMS.Core.DTOs.CustomerDTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LMS.Api.Controllers
@@ -31,7 +31,7 @@ namespace LMS.Api.Controllers
         }
 
         [HttpPost("validation-error")]
-        public IActionResult GetValidationError(Person person)
+        public IActionResult GetValidationError(CustomerDTO entity) 
         {
             return Ok();
         }

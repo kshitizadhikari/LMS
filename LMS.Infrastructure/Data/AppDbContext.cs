@@ -10,20 +10,31 @@ namespace LMS.Infrastructure.Data
 
         }
 
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Lunch> Lunches { get; set; }
-        public DbSet<LunchDetail> LunchDetails { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Food> Foods{ get; set; }
+        public DbSet<Menu> Menu { get; set; }
+        public DbSet<MenuItem> MenuItem { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Person>(p =>
-            {
-                p.HasOne(p => p.LunchDetail)
-                .WithMany(ld => ld.Persons)
-                .HasForeignKey(p => p.LunchDetailId);
-            });
+            modelBuilder.Entity<MenuItem>()
+                .HasKey(mi => new { mi.MenuId, mi.FoodId });
+
+            modelBuilder.Entity<MenuItem>()
+                .HasOne(mi => mi.Menu)
+                .WithMany(m => m.MenuItems)
+                .HasForeignKey(mi => mi.MenuId);
+
+            modelBuilder.Entity<MenuItem>()
+                .HasOne(mi => mi.Food)
+                .WithMany(f => f.MenuItems)
+                .HasForeignKey(mi => mi.FoodId);
+
+            modelBuilder.Entity<Food>()
+                .Property(f => f.FoodType)
+                .HasConversion<string>();
         }
     }
 }

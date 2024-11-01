@@ -2,6 +2,6 @@
 {
     public interface IRepositoryWrapper
     {
-        public IPersonRepository PersonRepository { get; }
+        public ICustomerRepository CustomerRepository { get; }
     }
 }
