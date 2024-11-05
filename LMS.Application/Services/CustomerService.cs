@@ -36,9 +36,9 @@ namespace LMS.Application.Services
             return person.MapToCustomerDTO();
         }
 
-        public async Task<CustomerDTO> UpdateAsync(string id, CustomerDTO dto)
+        public async Task<CustomerDTO> UpdateAsync(CustomerDTO dto)
         {
-            Customer customer = await _repo.CustomerRepository.GetByIdAsync(Guid.Parse(id)) ?? throw new Exception("Invalid customer object");
+            Customer customer = await _repo.CustomerRepository.GetByIdAsync(Guid.Parse(dto.Id)) ?? throw new Exception("Invalid customer object");
             customer.FirstName = dto.FirstName;
             customer.LastName = dto.LastName;
             customer.Email = dto.Email;

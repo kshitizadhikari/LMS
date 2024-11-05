@@ -34,10 +34,10 @@ namespace LMS.Api.Controllers
             return result;
         }
 
-        [HttpPut("{id}")]
-        public async Task<CustomerDTO> UpdateCustomer(string id, CustomerDTO dto)
+        [HttpPut]
+        public async Task<CustomerDTO> UpdateCustomer(CustomerDTO dto)
         {
-            CustomerDTO result = await _services.CustomerService.UpdateAsync(id, dto);
+            CustomerDTO result = await _services.CustomerService.UpdateAsync(dto);
             return result;
         }
 

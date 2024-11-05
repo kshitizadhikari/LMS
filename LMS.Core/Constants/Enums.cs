@@ -4,8 +4,8 @@
     {
         public enum FoodType
         {
-            NonVeg = 1,
-            Veg
+            Veg = 1,
+            NonVeg,
         }
     }
 }

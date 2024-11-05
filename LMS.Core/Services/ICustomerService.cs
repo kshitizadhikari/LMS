@@ -7,7 +7,7 @@ namespace LMS.Core.Services
         Task<CustomerDTO> GetByIdAsync(string id);
         Task<List<CustomerDTO>> GetAllAsync();
         Task<CustomerDTO> CreateAsync(CreateCustomerDTO person);
-        Task <CustomerDTO> UpdateAsync(string id, CustomerDTO person);
+        Task <CustomerDTO> UpdateAsync(CustomerDTO person);
         Task<bool> DeleteAsync(string id);
     }
 }
