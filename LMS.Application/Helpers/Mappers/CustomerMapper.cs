@@ -10,6 +10,7 @@ namespace LMS.Application.Helpers.Mappers
         {
             return new Customer
             {
+                Id = Guid.NewGuid(),
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
                 Email = dto.Email,

@@ -30,9 +30,10 @@ namespace LMS.Application.Services
             return result.MapToCustomerDTO();
         }
 
-        public async Task<CustomerDTO> GetByIdAsync(string id)
+        public async Task<CustomerDTO?> GetByIdAsync(string id)
         {
-            Customer person = await _repo.CustomerRepository.GetByIdAsync(Guid.Parse(id));
+            Customer? person = await _repo.CustomerRepository.GetByIdAsync(Guid.Parse(id));
+            if (person is null) return null;
             return person.MapToCustomerDTO();
         }
 
