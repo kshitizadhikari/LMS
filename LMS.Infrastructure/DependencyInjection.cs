@@ -17,6 +17,7 @@ namespace LMS.Infrastructure
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IFoodRepository, FoodRepository>();
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             return services;
         }

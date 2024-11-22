@@ -6,33 +6,42 @@ using System.Text.Json;
 
 namespace LMS.Application.Middlewares
 {
-    public class ExceptionMiddleware(IHostEnvironment env, RequestDelegate next)
+    public class ExceptionMiddleware
     {
+        private readonly RequestDelegate _next;
+        private readonly IHostEnvironment _env;
+
+        public ExceptionMiddleware(RequestDelegate next, IHostEnvironment env)
+        {
+            _next = next;
+            _env = env;
+        }
+
         public async Task InvokeAsync(HttpContext context)
         {
             try
             {
-                await next(context);
+                await _next(context);
             }
-            catch ( Exception ex)
+            catch (Exception ex)
             {
-                await HandleExceptionAsync(context, ex, env);
-                throw;
+                await HandleExceptionAsync(context, ex);
             }
         }
 
-        private static Task HandleExceptionAsync(HttpContext context, Exception ex, IHostEnvironment env)
+        private async Task HandleExceptionAsync(HttpContext context, Exception ex)
         {
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-            var response = env.IsDevelopment()
-                ? new ApiErrorResponse(context.Response.StatusCode, ex.Message, ex.StackTrace)
-                : new ApiErrorResponse(context.Response.StatusCode, ex.Message, "Internal Server Error");
+            var response = _env.IsDevelopment()
+                ? new ApiErrorResponse(context.Response.StatusCode, ex.Message, ex.StackTrace?.ToString())
+                : new ApiErrorResponse(context.Response.StatusCode, "An unexpected error occurred", "Internal Server Error");
 
-            JsonSerializerOptions options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+            var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
             var json = JsonSerializer.Serialize(response, options);
-            return context.Response.WriteAsync(json);
+
+            await context.Response.WriteAsync(json);
         }
     }
 }
