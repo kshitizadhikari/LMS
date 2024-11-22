@@ -6,6 +6,7 @@
         {
             Veg = 1,
             NonVeg,
+            Unknown
         }
     }
 }

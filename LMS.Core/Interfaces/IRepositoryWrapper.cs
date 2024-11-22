@@ -3,5 +3,6 @@
     public interface IRepositoryWrapper
     {
         public ICustomerRepository CustomerRepository { get; }
+        public IFoodRepository FoodRepository { get; }
     }
 }

@@ -9,6 +9,7 @@ namespace LMS.Application
         public static IServiceCollection AddApplicationDI(this IServiceCollection services)
         {
             services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IFoodService, FoodService>();
             services.AddScoped<IServiceWrapper, ServiceWrapper>();
             return services;
         }

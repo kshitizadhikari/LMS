@@ -5,12 +5,15 @@ namespace LMS.Application.Services
 {
     public class ServiceWrapper : IServiceWrapper
     {
-        private readonly ICustomerService _personService;
-        public ServiceWrapper(ICustomerService personService)
+        private readonly ICustomerService _customerService;
+        private readonly IFoodService _foodService;
+        public ServiceWrapper(ICustomerService customerService, IFoodService foodService)
         {
-            _personService = personService;
+            _customerService = customerService;
+            _foodService = foodService;
         }
-        public ICustomerService CustomerService => _personService;
+        public ICustomerService CustomerService => _customerService;
+        public IFoodService FoodService => _foodService;
 
     }
 }

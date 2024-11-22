@@ -1,4 +1,5 @@
-﻿using LMS.Application;
+﻿using LMS.Api.Exceptions;
+using LMS.Application;
 using LMS.Core;
 using LMS.Infrastructure;
 
@@ -11,6 +12,7 @@ public static class DependencyInjection
         services.AddApplicationDI()
                 .AddInfrastructureDI(configuration)
                 .AddCoreDI();
+        //services.AddExceptionHandler<CustomExceptionHandler>();
         return services;
     }
 }
