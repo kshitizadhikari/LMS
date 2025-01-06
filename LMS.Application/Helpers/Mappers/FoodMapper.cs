@@ -13,7 +13,7 @@ namespace LMS.Application.Helpers.Mappers
                 Id = string.IsNullOrEmpty(dto.Id) ? Guid.NewGuid() : Guid.Parse(dto.Id),
                 Name = dto.Name,
                 Price = dto.Price,
-                FoodType = Enum.TryParse<FoodType>(dto.Type, out var foodType) ? foodType : FoodType.Unknown,
+                FoodType = Enum.TryParse<FoodType>(dto.FoodType, out var foodType) ? foodType : FoodType.Unknown,
             };
         }
 
@@ -29,7 +29,7 @@ namespace LMS.Application.Helpers.Mappers
                 Id = entity.Id.ToString(),
                 Name = entity.Name,
                 Price = entity.Price,
-                Type = Utils.GetEnumDisplayName(entity.FoodType)
+                FoodType = Utils.GetEnumDisplayName(entity.FoodType)
             };
         }
 

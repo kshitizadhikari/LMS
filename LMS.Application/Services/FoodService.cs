@@ -51,7 +51,7 @@ namespace LMS.Application.Services
 
             food.Name = dto.Name;
             food.Price = dto.Price;
-            food.FoodType = Enum.TryParse<FoodType>(dto.Type, out var foodType) ? foodType : FoodType.Unknown;
+            food.FoodType = Enum.TryParse<FoodType>(dto.FoodType, out var foodType) ? foodType : FoodType.Unknown;
 
             await _repo.FoodRepository.UpdateAsync(food);
             return food.MapToFoodDTO();
