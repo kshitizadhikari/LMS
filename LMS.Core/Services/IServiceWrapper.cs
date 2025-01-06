@@ -4,5 +4,7 @@
     {
         public ICustomerService CustomerService { get; }
         public IFoodService FoodService { get; }
+        public IMenuService MenuService { get; }
+        public IMenuItemService MenuItemService { get; }
     }
 }

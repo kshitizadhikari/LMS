@@ -10,6 +10,8 @@ namespace LMS.Application
         {
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IFoodService, FoodService>();
+            services.AddScoped<IMenuService, MenuService>();
+            services.AddScoped<IMenuItemService, MenuItemService>();
             services.AddScoped<IServiceWrapper, ServiceWrapper>();
             return services;
         }
