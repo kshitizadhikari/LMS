@@ -18,6 +18,8 @@ namespace LMS.Infrastructure
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IFoodRepository, FoodRepository>();
+            services.AddScoped<IMenuRepository, MenuRepository>();
+            services.AddScoped<IMenuItemRepository, MenuItemRepository>();
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             return services;
         }
