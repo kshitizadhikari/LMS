@@ -15,11 +15,17 @@ namespace LMS.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<MenuDTO> Create([FromBody] CreateMenuDTO dto)
+        public async Task<IActionResult> Create([FromBody] CreateMenuDTO dto)
         {
             MenuDTO result = await _services.MenuService.CreateAsync(dto);
-            return result;
+            return Ok(result);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            List<MenuDTO> result = await _services.MenuService.GetAllAsync();
+            return Ok(result);
+        }
     }
 }
