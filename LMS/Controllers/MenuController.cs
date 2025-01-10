@@ -1,4 +1,5 @@
 ﻿using LMS.Core.DTOs.MenuDTOs;
+using LMS.Core.Parameters;
 using LMS.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,9 +23,9 @@ namespace LMS.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
+        public async Task<IActionResult> GetAllAsync([FromQuery] IncludeQP? includeQP)
         {
-            List<MenuDTO> result = await _services.MenuService.GetAllAsync();
+            List<MenuDTO> result = await _services.MenuService.GetAllAsync(includeQP);
             return Ok(result);
         }
     }

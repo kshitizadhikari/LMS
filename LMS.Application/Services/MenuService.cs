@@ -3,6 +3,7 @@ using LMS.Application.Helpers.Mappers;
 using LMS.Core.DTOs.MenuDTOs;
 using LMS.Core.Entities;
 using LMS.Core.Interfaces;
+using LMS.Core.Parameters;
 using LMS.Core.Services;
 
 namespace LMS.Application.Services
@@ -50,9 +51,18 @@ namespace LMS.Application.Services
             return result;
         }
 
-        public async Task<List<MenuDTO>> GetAllAsync()
+        public async Task<List<MenuDTO>> GetAllAsync(IncludeQP? includeQP)
         {
-            List<Menu> result = (await _repo.MenuRepository.GetAllAsync()).ToList();
+            List<Menu> result = new List<Menu>();
+            if (includeQP == null || includeQP.MenuItems == null)
+            {
+                result = (await _repo.MenuRepository.GetAllAsync()).ToList();
+            }
+            else
+            {
+                var expression = PredicateBuilder.True<Menu>();
+                result = (await _repo.MenuRepository.GetAllInclude(expression, includeQP)).ToList();
+            }
             return result.MapToMenuDTO();
         }
 
@@ -80,5 +90,6 @@ namespace LMS.Application.Services
             await _repo.MenuRepository.UpdateAsync(menu);
             return menu.MapToMenuDTO();
         }
+
     }
 }

@@ -2,6 +2,7 @@
 {
     public class IncludeQP
     {
-        public bool? IncludeMenuItems { get; set; }
+        public bool? MenuItems{ get; set; }
+        public bool? Foods { get; set; }
     }
 }
