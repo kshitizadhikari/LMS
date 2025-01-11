@@ -1,4 +1,5 @@
-﻿using LMS.Core.DTOs.MenuDTOs;
+﻿using LMS.Core.DTOs.FoodDTOs;
+using LMS.Core.DTOs.MenuDTOs;
 using LMS.Core.Entities;
 
 namespace LMS.Application.Helpers.Mappers
@@ -23,11 +24,19 @@ namespace LMS.Application.Helpers.Mappers
 
         public static MenuItemDTO MapToMenuItemDTO(this MenuItem entity)
         {
+            FoodDTO foodDto = new FoodDTO();
+
+            if (entity.Food != null)
+            {
+                foodDto = entity.Food.MapToFoodDTO();
+            }
             return new MenuItemDTO
             {
                 Id = entity.Id.ToString(),
                 MenuId = entity.MenuId.ToString(),
-                FoodId = entity.FoodId.ToString()
+                MenuDTO = entity.Menu.MapToMenuDTO(),
+                FoodId = entity.FoodId.ToString(),
+                FoodDTO = foodDto
             };
         }
 

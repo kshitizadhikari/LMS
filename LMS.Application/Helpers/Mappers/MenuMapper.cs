@@ -32,11 +32,18 @@ namespace LMS.Application.Helpers.Mappers
 
         public static MenuDTO MapToMenuDTO(this Menu entity)
         {
+            List<MenuItemDTO> menuItemDtoList = new List<MenuItemDTO>();
+            if (menuItemDtoList.Count > 0)
+            {
+                menuItemDtoList = entity.MenuItems.ToList().MapToMenuItemDTO();
+            }
+
             return new MenuDTO
             {
                 Id = entity.Id.ToString(),
                 Name = entity.Name,
-                Date = entity.Date
+                Date = entity.Date,
+                MenuItems = menuItemDtoList,
             };
         }
 
