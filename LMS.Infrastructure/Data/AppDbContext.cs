@@ -25,16 +25,19 @@ namespace LMS.Infrastructure.Data
             modelBuilder.Entity<MenuItem>()
                 .HasOne(mi => mi.Menu)
                 .WithMany(m => m.MenuItems)
-                .HasForeignKey(mi => mi.MenuId);
+                .HasForeignKey(mi => mi.MenuId)
+                .OnDelete(DeleteBehavior.Cascade); // Enable cascade delete
 
             modelBuilder.Entity<MenuItem>()
                 .HasOne(mi => mi.Food)
                 .WithMany(f => f.MenuItems)
-                .HasForeignKey(mi => mi.FoodId);
+                .HasForeignKey(mi => mi.FoodId)
+                .OnDelete(DeleteBehavior.Restrict); // Prevent cascading delete for Food
 
             modelBuilder.Entity<Food>()
                 .Property(f => f.FoodType)
                 .HasConversion<string>();
         }
+
     }
 }
