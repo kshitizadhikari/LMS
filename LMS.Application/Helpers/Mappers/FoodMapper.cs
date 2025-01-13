@@ -8,6 +8,8 @@ namespace LMS.Application.Helpers.Mappers
     {
         public static Food MapToFood(this FoodDTO dto)
         {
+            ArgumentNullException.ThrowIfNull(dto);
+
             return new Food
             {
                 Id = string.IsNullOrEmpty(dto.Id) ? Guid.NewGuid() : Guid.Parse(dto.Id),
@@ -19,11 +21,15 @@ namespace LMS.Application.Helpers.Mappers
 
         public static List<Food> MapToFood(this IList<FoodDTO> dtos)
         {
+            ArgumentNullException.ThrowIfNull(dtos);
+
             return dtos.Select(x => x.MapToFood()).ToList();
         }
 
         public static FoodDTO MapToFoodDTO(this Food entity)
         {
+            ArgumentNullException.ThrowIfNull(entity);
+
             return new FoodDTO
             {
                 Id = entity.Id.ToString(),
@@ -35,6 +41,8 @@ namespace LMS.Application.Helpers.Mappers
 
         public static List<FoodDTO> MapToFoodDTO(this IList<Food> entities)
         {
+            ArgumentNullException.ThrowIfNull(entities);
+
             return entities.Select(x => x.MapToFoodDTO()).ToList();
         }
     }

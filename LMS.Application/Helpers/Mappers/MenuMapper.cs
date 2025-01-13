@@ -7,6 +7,8 @@ namespace LMS.Application.Helpers.Mappers
     {
         public static Menu MapFromCreateDTOToEntity(this CreateMenuDTO dto)
         {
+            ArgumentNullException.ThrowIfNull(dto);
+
             return new Menu
             {
                 Id = Guid.NewGuid(),
@@ -17,6 +19,8 @@ namespace LMS.Application.Helpers.Mappers
 
         public static Menu MapToMenu(this MenuDTO dto)
         {
+            ArgumentNullException.ThrowIfNull(dto);
+
             return new Menu
             {
                 Id = Guid.Parse(dto.Id),
@@ -27,16 +31,16 @@ namespace LMS.Application.Helpers.Mappers
 
         public static List<Menu> MapToMenu(this IList<MenuDTO> dto)
         {
+            ArgumentNullException.ThrowIfNull(dto);
+
             return dto.Select(x => x.MapToMenu()).ToList();
         }
 
         public static MenuDTO MapToMenuDTO(this Menu entity)
         {
-            List<MenuItemDTO> menuItemDtoList = new List<MenuItemDTO>();
-            if (menuItemDtoList.Count > 0)
-            {
-                menuItemDtoList = entity.MenuItems.ToList().MapToMenuItemDTO();
-            }
+            ArgumentNullException.ThrowIfNull(entity);
+
+            var menuItemDtoList = entity.MenuItems?.ToList().MapToMenuItemDTO() ?? new List<MenuItemDTO>();
 
             return new MenuDTO
             {
@@ -49,6 +53,8 @@ namespace LMS.Application.Helpers.Mappers
 
         public static List<MenuDTO> MapToMenuDTO(this IList<Menu> entities)
         {
+            ArgumentNullException.ThrowIfNull(entities);
+
             return entities.Select(x => x.MapToMenuDTO()).ToList();
         }
     }
