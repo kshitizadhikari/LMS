@@ -8,6 +8,8 @@ namespace LMS.Application.Helpers.Mappers
     {
         public static MenuItem MapToMenuItem(this MenuItemDTO dto)
         {
+            ArgumentNullException.ThrowIfNull(dto);
+
             return new MenuItem
             {
                 Id = string.IsNullOrEmpty(dto.Id) ? Guid.NewGuid() : Guid.Parse(dto.Id),
@@ -19,22 +21,21 @@ namespace LMS.Application.Helpers.Mappers
 
         public static List<MenuItem> MapToMenuItem(this IList<MenuItemDTO> items)
         {
+            ArgumentNullException.ThrowIfNull(items);
+
             return items.Select(x => x.MapToMenuItem()).ToList();
         }
 
         public static MenuItemDTO MapToMenuItemDTO(this MenuItem entity)
         {
-            FoodDTO foodDto = new FoodDTO();
+            ArgumentNullException.ThrowIfNull(entity);
 
-            if (entity.Food != null)
-            {
-                foodDto = entity.Food.MapToFoodDTO();
-            }
+            var foodDto = entity.Food?.MapToFoodDTO();
+
             return new MenuItemDTO
             {
                 Id = entity.Id.ToString(),
                 MenuId = entity.MenuId.ToString(),
-                MenuDTO = entity.Menu.MapToMenuDTO(),
                 FoodId = entity.FoodId.ToString(),
                 FoodDTO = foodDto
             };
@@ -42,6 +43,8 @@ namespace LMS.Application.Helpers.Mappers
 
         public static List<MenuItemDTO> MapToMenuItemDTO(this IList<MenuItem> entities)
         {
+            ArgumentNullException.ThrowIfNull(entities);
+
             return entities.Select(x => x.MapToMenuItemDTO()).ToList();
         }
     }
