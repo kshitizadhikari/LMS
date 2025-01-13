@@ -15,6 +15,10 @@ namespace LMS.Application.Services
 
         public async Task<MenuDTO> CreateAsync(CreateMenuDTO dto)
         {
+            ArgumentNullException.ThrowIfNull(dto);
+            if (dto.FoodIds == null || dto.FoodIds.Length == 0)
+                throw new ArgumentException("FoodIds cannot be null or empty.", nameof(dto.FoodIds));
+
             // Map dto to Menu entity and create it
             Menu menu = dto.MapFromCreateDTOToEntity();
             menu.CreatedAt = DateTime.UtcNow;
@@ -53,17 +57,22 @@ namespace LMS.Application.Services
 
         public async Task<List<MenuDTO>> GetAllAsync(IncludeQP? includeQP)
         {
-            List<Menu> result = new List<Menu>();
-            if (includeQP == null || includeQP.MenuItems == null)
+            List<Menu> menus;
+
+            if (includeQP?.MenuItems == null)
             {
-                result = (await _repo.MenuRepository.GetAllAsync()).ToList();
+                // Fetch all menus without includes
+                menus = (await _repo.MenuRepository.GetAllAsync()).ToList();
             }
             else
             {
+                // Build expression using PredicateBuilder
                 var expression = PredicateBuilder.True<Menu>();
-                result = (await _repo.MenuRepository.GetAllInclude(expression, includeQP)).ToList();
+                menus = (await _repo.MenuRepository.GetAllInclude(expression, includeQP)).ToList();
             }
-            return result.MapToMenuDTO();
+
+            var abc = menus?.MapToMenuDTO() ?? new List<MenuDTO>();
+            return abc;
         }
 
         public async Task<MenuDTO> GetByIdAsync(string id)
