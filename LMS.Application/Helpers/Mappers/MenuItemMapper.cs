@@ -37,7 +37,7 @@ namespace LMS.Application.Helpers.Mappers
                 Id = entity.Id.ToString(),
                 MenuId = entity.MenuId.ToString(),
                 FoodId = entity.FoodId.ToString(),
-                FoodDTO = foodDto
+                Food = foodDto
             };
         }
 
